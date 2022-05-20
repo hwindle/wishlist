@@ -8,14 +8,13 @@
 
     public function getConnection() {
       $this->conn = null;
-      $connectionString = 'host=' . $this->host . 'port=' . $this->port . 'dbname='
-        . $this->dbname . 'user=' . $this->user . 'password=' . $this->password;
       try {
-        $this->conn = pg_connect($connectionString);
-      } catch (Exception $e) {
+        $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->database_name, $this->username, $this->password);
+        $this->conn->exec("set names utf8");
+      } catch (PDOException $e) {
         echo 'Database could not be connected' . $e->getMessage();
       }
-
       return $this->conn;
     }
+
   }
