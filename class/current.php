@@ -14,6 +14,9 @@
     // DB connection in constructor
     public function __construct($db) {
       $this->conn = $db;
+      if (!$this->conn) {
+        $e = 'Database connection failed in current constructor.';
+      }
     }
 
     // fetch all rows

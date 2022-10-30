@@ -20,6 +20,9 @@
     // DB connection in constructor
     public function __construct($db) {
       $this->conn = $db;
+      if (!$this->conn) {
+        $e = 'Database connection failed in wishlist constructor.';
+      }
     }
 
     // fetch all rows

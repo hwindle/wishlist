@@ -1,3 +1,15 @@
+<?php
+  require_once('header.php');
+
+  require_once('class/current.php');
+  require_once('config/database.php');
+  $db = new Database();
+  $db_postgres = $db->getConnection();
+  $current = new Current($db_postgres);
+
+
+?>
+
 <h3>Add a current item</h3>
 <form method="post" action="add_current.php">
   <div class="form-row">
@@ -39,3 +51,6 @@
     <button id="add-current-submit" name="add-current-submit" class="btn btn-primary btn-large">Add Item</button>
   </div>
 </form>
+<p class="error-area">
+  <?= $e; ?>
+</p>
