@@ -10,15 +10,18 @@
   if (isset($_POST['add-current-submit'])) {
     // Create the variables for the class (all public vars)
     $this->item = $_POST['item'];
-    $this->user_id = 2;
+    $this->user_id = $_POST['user_id'];
     $this->description = $_POST['description'];
     $this->status = $_POST['status'];
     $this->place = $_POST['place'];
     // Figure out getting the user_id from the session_id/cookies on login
 
     // Access createCurrent method
-
-    // Display an error or success message
+    if ($current->createCurrent()) {
+      $e = 'Current item added successfully.';
+    } else {
+      $e = 'createCurrent method returned false on statement execute.';
+    }
   }
 ?>
 
@@ -26,7 +29,7 @@
 <form method="post" action="add_current.php">
   <div class="form-row">
     <input id="user_id" name="user_id" type="hidden" 
-    value="<?php echo $this->user_id; ?>">
+    value="0"> <!-- this is for testing purposes -->
     <label for="item">Item </label>
     <input type="text" id="item" name="item" class="form-control" required>
   </div>
