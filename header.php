@@ -17,5 +17,3 @@
     </ul>
   </nav>
   
-</body>
-</html>
