@@ -6,6 +6,7 @@
     private $dbTable = 'current_items';
     // columns
     public $id;
+    public $user_id;
     public $item;
     public $description;
     public $status;
@@ -26,9 +27,10 @@
     // create one current item
     public function createCurrent() {
       $sqlQuery = 'INSERT INTO' . $this->dbTable . 
-            '(item, description, status, place)
+            '(item, user_id, description, status, place)
                 VALUES (
                 item = :item, 
+                user_id = :user_id,
                 description = :description, 
                 status = :status,
                 place = :place    
@@ -36,11 +38,13 @@
       $stmt = $this->conn->prepare($sqlQuery);
       // clean data
       $this->item = htmlspecialchars(strip_tags($this->item));
+      $this->user_id = $this->user_id;
       $this->description = htmlspecialchars(strip_tags($this->description));
       $this->status = htmlspecialchars(strip_tags($this->status));
       $this->place = htmlspecialchars(strip_tags($this->place));
       // bind data
       $stmt->bindParam(':item', $this->item);
+      $stmt->bindParam(':user_id', $this->user_id);
       $stmt->bindParam(':description', $this->description);
       $stmt->bindParam(':status', $this->status);
       $stmt->bindParam(':place', $this->place);
@@ -60,6 +64,7 @@
         $stmt->execute();
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
         $this->item = $dataRow['item'];
+        $this->user_id = $dataRow['user_id'];
         $this->description = $dataRow['description'];
         $this->status = $dataRow['status'];
         $this->place = $dataRow['place'];
@@ -73,6 +78,7 @@
       $sqlQuery = 'UPDATE ' . $this->dbTable .
           ' SET 
             item = :item, 
+            user_id = :user_id,
             description = :description, 
             status = :status,
                 place = :place
@@ -81,12 +87,14 @@
       $stmt = $this->conn->prepare($sqlQuery);
       // clean data
       $this->item = htmlspecialchars(strip_tags($this->item));
+      $this->user_id = (int) $this->user_id;
       $this->description = htmlspecialchars(strip_tags($this->description));
       $this->status = htmlspecialchars(strip_tags($this->status));
       $this->place = htmlspecialchars(strip_tags($this->place));
       $this->id = (int) $this->id;
       // bind data
       $stmt->bindParam(':item', $this->item);
+      $stmt->bindParam(':user_id', $this->user_id);
       $stmt->bindParam(':description', $this->description);
       $stmt->bindParam(':status', $this->status);
       $stmt->bindParam(':place', $this->place);
