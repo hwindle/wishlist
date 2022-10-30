@@ -7,7 +7,19 @@
   $db_postgres = $db->getConnection();
   $current = new Current($db_postgres);
 
+  if (isset($_POST['add-current-submit'])) {
+    // Create the variables for the class (all public vars)
+    $this->item = $_POST['item'];
+    $this->user_id = 2;
+    $this->description = $_POST['description'];
+    $this->status = $_POST['status'];
+    $this->place = $_POST['place'];
+    // Figure out getting the user_id from the session_id/cookies on login
 
+    // Access createCurrent method
+
+    // Display an error or success message
+  }
 ?>
 
 <h3>Add a current item</h3>
@@ -48,7 +60,7 @@
     </div>
   </div>
   <div class="form-group form-buttons">
-    <button id="add-current-submit" name="add-current-submit" class="btn btn-primary btn-large">Add Item</button>
+    <button id="add-current-submit" name="add-current-submit" class="btn btn-primary btn-lg">Add Item</button>
   </div>
 </form>
 <p class="error-area">
