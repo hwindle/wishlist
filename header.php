@@ -35,16 +35,26 @@
         </a>
       </li>
       <!-- php if/else here -->
-      <li class="nav-item">
-        <a href="login.php" class="nav-link"><span class="pencil"></span>
-          Login
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="logout.php" class="nav-link"><span class="pencil"></span>
-          Logout
-        </a>
-      </li>
+<?php
+  if ($_SESSION) {
+    echo <<<'LIST'
+    <li class="nav-item">
+      <a href="logout.php" class="nav-link">
+        Logout
+      </a>
+    </li>
+    LIST;
+  } else {
+    echo <<<'LOGIN'
+    <li class="nav-item">
+    <a href="login.php" class="nav-link">
+      Login
+    </a>
+    </li>
+    LOGIN;
+  }
+?>
+    <!-- rest of list -->       
     </ul>
   </nav>
   

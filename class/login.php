@@ -46,8 +46,27 @@ class User {
   }
 
   // login 1 user
-  public function login($user_id) {
-    // password verify
+  public function login() {
+    // see if the username and password are in the database
+    $sql = 'SELECT * FROM ' . $this->dbTable . ' WHERE user_name = :user_name AND password = :password LIMIT 1';
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(':user_name', $this->user_name);
+    $stmt->bindParam(':password', $this->password);
+    try {
+      $stmt->execute();
+    } catch (PDOException $pdoExcept) {
+      echo 'Caught exception: ' . $pdoExcept->getMessage();
+    }
+    // login and start new session if they are
+    $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user_data) {
+      session_start();
+      $_SESSION['user_id'] = $user_data['user_id']; // from DB - pri key
+      $_SESSION['user_name'] = $this->user_name;
+      return true;
+    } else {
+      return false;
+    }
 
   }
 
