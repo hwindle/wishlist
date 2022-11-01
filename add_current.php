@@ -7,15 +7,13 @@
   $db_postgres = $db->getConnection();
   $current = new Current($db_postgres);
 
-  if (isset($_POST['add-current-submit'])) {
+  if (isset($_POST['add-current-submit']) && isset($_SESSION['user_id'])) {
     // Create the variables for the class (all public vars)
-    $this->item = $_POST['item'];
-    $this->user_id = $_POST['user_id'];
-    $this->description = $_POST['description'];
-    $this->status = $_POST['status'];
-    $this->place = $_POST['place'];
-    // Figure out getting the user_id from the session_id/cookies on login
-
+    $current->item = $_POST['item'];
+    $current->user_id = $_SESSION['user_id'];
+    $current->description = $_POST['description'];
+    $current->status = $_POST['status'];
+    $current->place = $_POST['place'];
     // Access createCurrent method
     if ($current->createCurrent()) {
       $e = 'Current item added successfully.';
@@ -28,8 +26,6 @@
 <h3>Add a current item</h3>
 <form method="post" action="add_current.php">
   <div class="form-row">
-    <input id="user_id" name="user_id" type="hidden" 
-    value="0"> <!-- this is for testing purposes -->
     <label for="item">Item </label>
     <input type="text" id="item" name="item" class="form-control" required>
   </div>

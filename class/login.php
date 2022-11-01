@@ -27,11 +27,12 @@ class User {
     if ($stmt->execute()) {
       if ($stmt->fetch(PDO::FETCH_ASSOC)) {
         $e = 'The user id or email already exists in the table.';
+        return false;
       }
     }
     // store the new user data
     $sql_store = 'INSERT INTO ' . $this->dbTable . 
-              '(user_name = :user_name, 
+              ' (user_name = :user_name, 
                 email = :email, 
                 password = :password)';
     $other_stmt = $this->conn->prepare($sql_store);
@@ -62,7 +63,7 @@ class User {
     if ($user_data) {
       session_start();
       $_SESSION['user_id'] = $user_data['user_id']; // from DB - pri key
-      $_SESSION['user_name'] = $this->user_name;
+      $_SESSION['user_name'] = $user_data['user_name'];
       return true;
     } else {
       return false;
@@ -70,9 +71,9 @@ class User {
 
   }
 
-  // logout 1 user
-  public function logout($user_id) {
+  // // logout 1 user
+  // public function logout($user_id) {
 
-  }
+  // }
 
 }
