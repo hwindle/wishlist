@@ -35,8 +35,8 @@
 
     // create one wishlist item
     public function createWishlist() {
-      $sqlQuery = 'INSERT INTO' . $this->dbTable . 
-            '(user_id, item, category, shop_name, url,
+      $sqlQuery = 'INSERT INTO ' . $this->dbTable . 
+            ' (user_id, item, category, shop_name, url,
                pic, quantity, price, room, priority)
                 VALUES (user_id = :user_id,
                 item = :item, category = :category,
@@ -76,7 +76,7 @@
 
     // read one item
     public function getSingleItem() {
-      $sqlQuery = 'SELECT * FROM' . $this->dbTable 
+      $sqlQuery = 'SELECT * FROM ' . $this->dbTable 
               . ' WHERE id = ? LIMIT 1';
       $stmt = $this->conn->prepare($sqlQuery);
       $stmt->bindParam(1, $this->wishlist_id);
@@ -111,7 +111,7 @@
 
       $stmt = $this->conn->prepare($sqlQuery);
       // clean data
-      $this->user_id = $this->user_id;
+      $this->user_id = $_SESSION['user_id'];
       $this->item = htmlspecialchars(strip_tags($this->item));
       $this->category = htmlspecialchars(strip_tags($this->category));
       $this->shop_name = htmlspecialchars(strip_tags($this->shopName));
@@ -142,10 +142,10 @@
     }
 
     // delete 1 item
-    function deleteItem() {
+    function deleteItem($id) {
       $sqlQuery = 'DELETE FROM ' . $this->dbTable . ' WHERE id = ?';
       $stmt = $this->conn->prepare($sqlQuery);
-      $this->wishlist_id = (int) $this->wishlist_id;
+      $this->wishlist_id = (int) $id;
       $stmt->bindParam(1, $this->wishlist_id);
       if ($stmt->execute()) {
         return true;

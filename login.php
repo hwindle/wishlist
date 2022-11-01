@@ -11,7 +11,7 @@
     $user_obj->user_name = htmlspecialchars($_POST['user_name']);
     $user_obj->password = password_verify($_POST['password']);
     if ($user_obj->login()) {
-      $e = 'Welcome! :-)';
+      $e = 'Welcome! ' . $_SESSION['user_name'] . ' :-)';
     } else {
       $e .= '<br>You are not logged in - login.php line 16';
     }
