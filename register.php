@@ -15,10 +15,10 @@
       $user_obj->email = 'someone@example.com';
     }
 
-    $cleaned_pass = preg_match('/[a-zA-Z0-9]{8, 20}/', $_POST['password'], '');
-    $cleaned_conf = preg_match('/[a-zA-Z0-9]{8, 20}/', $_POST['confirm-pass'], '');
+    $cleaned_pass = preg_replace('/[a-zA-Z0-9]{8, 20}/', $_POST['password'], '');
+    $cleaned_conf = preg_replace('/[a-zA-Z0-9]{8, 20}/', $_POST['confirm-pass'], '');
     if ($cleaned_conf == $cleaned_pass) {
-      $user_obj->password = password_hash($cleaned_pass);
+      $user_obj->password = password_hash($cleaned_pass, PASSWORD_DEFAULT);
     } else {
       $e = 'Passwords must match. Line 22';
     }
