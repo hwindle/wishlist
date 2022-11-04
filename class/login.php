@@ -61,6 +61,7 @@ class User {
     // login and start new session if they are
     $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
     $this->password = $user_data['password'];
+    echo 'password hash' . $this->password;
     if ($this->password) {
       if (password_verify($this->password_to_check, $this->password)) {
         session_start();

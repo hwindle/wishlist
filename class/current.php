@@ -29,19 +29,22 @@
 
     // create one current item
     public function createCurrent() {
+      $temp_id = 1;
       $sqlQuery = 'INSERT INTO ' . $this->dbTable . 
-            ' (item, user_id, description, status, place)
-                VALUES (
-                item = :item, 
-                user_id = :user_id,
-                description = :description, 
-                status = :status,
-                place = :place    
+            ' VALUES (
+                  DEFAULT,
+                  :user_id,
+                  :item, 
+                  :description, 
+                  :status,
+                  :place    
             )';
       $stmt = $this->conn->prepare($sqlQuery);
       // clean data
       $this->item = htmlspecialchars(strip_tags($this->item));
-      $this->user_id = $this->user_id;
+      if (!$this->user_id) {
+        $this->user_id = 1;
+      }
       $this->description = htmlspecialchars(strip_tags($this->description));
       $this->status = htmlspecialchars(strip_tags($this->status));
       $this->place = htmlspecialchars(strip_tags($this->place));
@@ -61,7 +64,7 @@
     public function getOneItem($id) {
       $this->id = (int) $id;
       $sqlQuery = 'SELECT * FROM ' . $this->dbTable 
-              . ' WHERE id = ? LIMIT 1';
+              . ' WHERE current_id = ? LIMIT 1';
       $stmt = $this->conn->prepare($sqlQuery);
       $stmt->bindParam(1, $this->id);
       try {
@@ -82,8 +85,8 @@
       $this->id = (int) $id;
       $sqlQuery = 'UPDATE ' . $this->dbTable .
           ' SET 
-            item = :item, 
             user_id = :user_id,
+            item = :item, 
             description = :description, 
             status = :status,
                 place = :place
@@ -112,7 +115,7 @@
     // delete 1 item
     function deleteItem($id) {
       $this->id = (int) $id;
-      $sqlQuery = 'DELETE FROM ' . $this->dbTable . ' WHERE id = ?';
+      $sqlQuery = 'DELETE FROM ' . $this->dbTable . ' WHERE user_id = ?';
       $stmt = $this->conn->prepare($sqlQuery);
       $stmt->bindParam(1, $this->id);
       if ($stmt->execute()) {

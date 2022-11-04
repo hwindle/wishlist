@@ -36,7 +36,7 @@
       </li>
       <!-- php if/else here -->
 <?php
-  if ($_SESSION) {
+  if ($_SESSION['user_id'] != null) {
     echo <<<'LIST'
     <li class="nav-item">
       <a href="logout.php" class="nav-link">

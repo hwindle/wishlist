@@ -6,8 +6,8 @@
   $db = new Database();
   $db_postgres = $db->getConnection();
   $current = new Current($db_postgres);
-
-  if (isset($_POST['add-current-submit']) && isset($_SESSION['user_id'])) {
+  // && isset($_SESSION['user_id'])
+  if (isset($_POST['add-current-submit'])) {
     // Create the variables for the class (all public vars)
     $current->item = $_POST['item'];
     $current->user_id = $_SESSION['user_id'];
@@ -65,3 +65,7 @@
 <p class="error-area">
   <?= $e; ?>
 </p>
+
+<?php
+  require_once('footer.php');
+?>
