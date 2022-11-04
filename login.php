@@ -9,7 +9,7 @@
 
   if (isset($_POST['login-submit'])) {
     $user_obj->user_name = htmlspecialchars($_POST['user_name']);
-    $user_obj->password_to_check = htmlspecialchars($_POST['password']);
+    $user_obj->password_to_check = $_POST['password'];
 
     if ($user_obj->login()) {
       $e = 'Welcome! ' . $_SESSION['user_name'] . ' :-)';
