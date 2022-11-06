@@ -61,10 +61,9 @@ class User {
     // login and start new session if they are
     $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
     $this->password = $user_data['password'];
-    echo 'password hash' . $this->password;
+    // echo 'password hash' . $this->password;
     if ($this->password) {
       if (password_verify($this->password_to_check, $this->password)) {
-        session_start();
         $_SESSION['user_id'] = $user_data['user_id']; // from DB - pri key
         $_SESSION['user_name'] = $user_data['user_name'];
         return true;

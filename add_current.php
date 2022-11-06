@@ -6,8 +6,7 @@
   $db = new Database();
   $db_postgres = $db->getConnection();
   $current = new Current($db_postgres);
-  // && isset($_SESSION['user_id'])
-  if (isset($_POST['add-current-submit'])) {
+  if (isset($_POST['add-current-submit']) && isset($_SESSION['user_id'])) {
     // Create the variables for the class (all public vars)
     $current->item = $_POST['item'];
     $current->user_id = $_SESSION['user_id'];
@@ -18,7 +17,7 @@
     if ($current->createCurrent()) {
       $e = 'Current item added successfully.';
     } else {
-      $e = 'createCurrent method returned false on statement execute.';
+      $e .= 'createCurrent method returned false on statement execute.';
     }
   }
 ?>
