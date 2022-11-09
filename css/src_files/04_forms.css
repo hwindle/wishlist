@@ -1,0 +1,170 @@
+/***********
+* FORMS
+*
+* styles for various types of form
+* or PHP web applications
+*/
+.success, .js-success, .php-error, .js-error {
+    width: 50%;
+    margin: 0 auto; 
+}
+    
+.js-error {
+    width: 70%;
+    border-radius: 3px;
+}
+  
+#error_space {
+    width: 70%;
+    height: 4em;
+    margin: 0 auto;
+    font-size: 1.2em; 
+}
+  
+/* CONTACT FORM */
+form {
+    box-sizing: border-box;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+  
+.full-width {
+    grid-column: span 2;
+}
+
+
+button,
+fieldset,
+input,
+legend,
+select,
+textarea {
+    border-radius: 3px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* mobile screens */
+@media screen and (max-width: 1024px) {
+    form {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    label {
+        display: block;
+    }
+
+    button,
+    fieldset,
+    input,
+    legend,
+    select,
+    textarea {
+        grid-column: span 1;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1025px) {
+    form {
+        width: 60%;
+        margin: 0 auto; 
+    }
+
+    label {
+        display: inline-block;
+    }
+}
+
+input[type="submit"] {
+    margin: 0.3rem;
+    padding: 0 3rem;
+    font-family: body-sans, "Liberation Sans", Arial, sans-serif;
+    font-size: 2rem; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    font-family: body-font, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.6rem;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+}
+
+textarea {
+    min-height: 12rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  height: 1.6rem;
+  width: 1.6rem;
+  vertical-align: middle;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background-image: radial-gradient(
+      var(--light-company-col) 40%,
+      transparent calc(40% + 1px)
+    );
+}
+
+input[type="checkbox"]:checked {
+    background-image: linear-gradient(
+        var(--light-company-col) 40%, 
+        var(--dark-company-col)
+    );
+}
+
+.large-label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+
+.small-label {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 0.25rem;
+    margin-right: 1.5rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* Firefox */
+  color: var(--light-company-col);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--light-company-col);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px black;
+}
+
+/* modal */
+div#error_space {
+    display: none; 
+}
+ 
+  

@@ -1,0 +1,370 @@
+/********************************************
+ * LAYOUT
+ *
+ * Setting up the padding, basic colours, and
+ * any positioning.
+ ********************************************/
+html, body {
+    width: 100%;
+    height: 100%; 
+}
+
+div.container-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+/*** HEADER ***/
+header {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+}
+  
+div#logo {
+    width: 250px;
+    height: 250px;
+    flex-shrink: 3;
+}
+
+div.header-titles {
+    flex-grow: 4;
+}
+
+/* mobile screens */
+@media screen and (max-width: 1024px) {
+    header hgroup h1 {
+        font-size: 2.6rem;
+    }
+
+    header hgroup h2 {
+        font-size: 2rem;
+    }
+
+    aside.right-column {
+        display: none;
+    }
+}
+
+/* bigger screens */
+@media screen and (min-width: 1025px) {
+    header hgroup h1 {
+        font-size: 4rem;
+    }
+
+    header hgroup h2 {
+        font-size: 3rem;
+    }
+}
+
+hgroup#key-contacts p {
+    font-family: body-font, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    text-align: center; 
+    text-shadow: 1px 1px 2px black, 
+        -1px -1px 2px black, 0px 0px 6px black;
+}
+
+/*** BODY CONTENT ***/
+pre, code, p {
+    padding: 1rem; 
+}
+
+main {
+    margin-top: 2rem;
+    flex: 1 0 auto;
+}
+
+main#home-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section#left-content {
+    flex-grow: 4;
+    height: 100%;
+}
+
+aside.right-column {
+    flex-shrink: 3;
+    height: 100%;
+}
+
+/*** FOOTER ***/
+footer {
+    margin-top: 0.6rem;
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer section a {
+    text-decoration: none;
+}
+
+button.social-icon {
+    margin: 0 1rem;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button.social-icon:hover {
+    background-color: var(--light-company-col);
+    box-shadow: 0px 0px 4px var(--white);
+    outline: var(--dark-company-col);
+}
+
+footer #twitter-logo {
+    background-image: url('../../pics/twitter_white.svg'); 
+    background-size: contain;
+}
+  
+footer #facebook-logo {
+    background-image: url('../../pics/fb_white.svg');
+    background-size: contain; 
+}
+ 
+footer #instagram-logo {
+    background-image: url('../../pics/instagram_white.svg');
+    background-size: contain;
+}
+
+
+/*** navigation ***/
+nav {
+    background: var(--black);
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu,
+.submenu {
+    list-style-type: none;
+}
+
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+
+.item {
+    padding: 10px;
+}
+
+.item.button {
+    padding: 9px 5px;
+}
+
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: --var(--light-grey);
+}
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 10px;
+}
+
+.menu li.subitem a {
+    padding: 15px;
+}
+
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+
+.item.button {
+    order: 2;
+}
+
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.active .item {
+    display: block;
+}
+
+/* divider between buttons and menu links */
+.button.secondary {
+    border-bottom: 1px #444 solid;
+}
+
+/* Submenu up from mobile screens */
+.submenu {
+    display: none;
+}
+
+.submenu-active .submenu {
+   display: block;
+}
+
+.has-submenu i {
+    font-size: 12px;
+}
+
+.has-submenu > a::after {
+    font-size: 20px;
+    line-height: 16px;
+    font-weight: 900;
+    content: "\25BC";
+    color: white;
+    padding-left: 5px;
+}
+
+.subitem a {
+    padding: 10px 15px;
+}
+
+.submenu-active {
+    background-color: #111;
+    border-radius: 3px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    .button a {
+        background: var(--light-company-col);
+        border: 1px var(--light-company-col) solid;
+    }
+
+    .button.secondary {
+        border: 0;
+    }
+
+    .button.secondary a {
+        background: transparent;
+        border: 1px var(--light-company-col) solid;
+    }
+
+    .button a:hover {
+        text-decoration: none;
+    }
+
+    .button:not(.secondary) a:hover {
+        background: var(--dark-company-col);
+        border-color: var(--light-company-col);
+        color: var(--black);
+    }
+}
+
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+    }
+
+    .logo {
+        order: 0;
+    }
+
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+
+    .button {
+        order: 2;
+    }
+
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .submenu-active {
+        border-radius: 0;
+    }
+}
+
+
+/** special bits **/
+#ourMap {
+    width: 100%;
+    height: 500px; 
+}
+  
+/* page titles */
+section#content > h3 {
+    font-size: 2.6rem;
+}
+
+section#content > figure > img {
+    margin: 0 auto;
+}
+
+/* mobile screens */
+@media screen and (max-width: 1024px) {
+    section#content > p, section#content > ul {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+/* bigger screens */
+@media screen and (min-width: 1025px) {
+    section#content > p, section#content > ul {
+        margin: 0 auto;
+        width: 60%;
+    }
+}
+
+div#opening-times {
+    text-align: center;
+}
