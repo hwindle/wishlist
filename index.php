@@ -8,15 +8,12 @@
   $current = new Current($db_postgres);
 
 ?>
-<button class="btn btn-success btn-lg">
-  <a href="register.php">Register</a>
-</button>
 <!-- list of current items, sort by status -->
 <?php
   if ($_SESSION['user_id'] != null):
 ?>
   <h3>Current Items</h3>
-  <table class="table" id="current-items">
+  <table id="current-items">
     <thead>
       <tr>
         <th>Item</th>

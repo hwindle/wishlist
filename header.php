@@ -51,6 +51,9 @@
     LIST;
   } else {
     echo <<<'LOGIN'
+    <li class="item button">
+      <a href="register.php">Register</a>
+    </li>
     <li class="item button secondary">
     <a href="login.php" class="nav-link">
       Login
