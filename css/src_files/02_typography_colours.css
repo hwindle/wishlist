@@ -1,11 +1,11 @@
 :root {
-  --light-grey: rgba(178, 179, 181, 1.0);
+  --light-grey: rgb(245, 240, 230);
   --mid-grey: rgba(0, 0, 0, 0.5);
-  --brown: rgba(143, 107, 93, 1.0);
+  --orange: rgba(219, 105, 12, 1.0);
   --blush: rgba(219, 157, 132, 1.0);
   --light-blue: rgba(121, 181, 219, 1.0);
-  --khaki: rgba(143, 126, 64, 1.0);
-  --yellow: rgba(219, 196, 110, 1.0);
+  --dark-blue: rgb(20, 68, 99);
+  --yellow: rgb(248, 230, 166);
 }
 
 * {
@@ -71,8 +71,10 @@ body, main {
 }
 
 header {
-  background: linear-gradient(var(--brown), var(--blush),
-   var(--khaki), var(--yellow));
+  background: linear-gradient(to left, 
+  var(--orange), var(--blush),
+   var(--yellow));
+  text-align: center;
 }
 
 figure {
