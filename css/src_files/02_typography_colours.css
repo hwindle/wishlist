@@ -88,7 +88,7 @@ figure > img {
 }
 
 #logo {
-  background-image: url('flower-logo.png');
+  background-image: url('../flower-logo.png');
   background-repeat: no-repeat;
   background-size: 100% 100%; 
 }

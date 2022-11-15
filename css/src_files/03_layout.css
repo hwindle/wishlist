@@ -9,11 +9,6 @@ html, body {
     height: 100%; 
 }
 
-div.container-flex {
-    display: flex;
-    flex-direction: column;
-}
-
 /*** HEADER ***/
 header {
     display: flex;
@@ -22,8 +17,8 @@ header {
 }
   
 div#logo {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     flex-shrink: 3;
 }
 
@@ -33,62 +28,29 @@ div.header-titles {
 
 /* mobile screens */
 @media screen and (max-width: 1024px) {
-    header hgroup h1 {
+    header h1 {
         font-size: 2.6rem;
     }
 
-    header hgroup h2 {
+    header h2 {
         font-size: 2rem;
-    }
-
-    aside.right-column {
-        display: none;
     }
 }
 
 /* bigger screens */
 @media screen and (min-width: 1025px) {
-    header hgroup h1 {
+    header h1 {
         font-size: 4rem;
     }
 
-    header hgroup h2 {
+    header h2 {
         font-size: 3rem;
     }
 }
 
-hgroup#key-contacts p {
-    font-family: body-font, Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.4rem;
-    text-align: center; 
-    text-shadow: 1px 1px 2px black, 
-        -1px -1px 2px black, 0px 0px 6px black;
-}
-
 /*** BODY CONTENT ***/
-pre, code, p {
+pre, code, p, main {
     padding: 1rem; 
-}
-
-main {
-    margin-top: 2rem;
-    flex: 1 0 auto;
-}
-
-main#home-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-section#left-content {
-    flex-grow: 4;
-    height: 100%;
-}
-
-aside.right-column {
-    flex-shrink: 3;
-    height: 100%;
 }
 
 /*** FOOTER ***/
@@ -99,45 +61,9 @@ footer {
     text-align: center;
 }
 
-footer section a {
-    text-decoration: none;
-}
-
-button.social-icon {
-    margin: 0 1rem;
-    width: 45px;
-    height: 45px;
-    background-color: transparent;
-    border: 0;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-button.social-icon:hover {
-    background-color: var(--light-company-col);
-    box-shadow: 0px 0px 4px var(--white);
-    outline: var(--dark-company-col);
-}
-
-footer #twitter-logo {
-    background-image: url('../../pics/twitter_white.svg'); 
-    background-size: contain;
-}
-  
-footer #facebook-logo {
-    background-image: url('../../pics/fb_white.svg');
-    background-size: contain; 
-}
- 
-footer #instagram-logo {
-    background-image: url('../../pics/instagram_white.svg');
-    background-size: contain;
-}
-
-
 /*** navigation ***/
 nav {
-    background: var(--black);
+    background: var(--light-blue);
     padding: 0 15px;
 }
 
@@ -165,7 +91,7 @@ a {
 
 .item:not(.button) a:hover,
 .item a:hover::after {
-    color: --var(--light-grey);
+    color: --var(--dark-blue);
 }
 /* Mobile menu */
 .menu {
@@ -206,7 +132,7 @@ a {
 
 /* divider between buttons and menu links */
 .button.secondary {
-    border-bottom: 1px #444 solid;
+    border-bottom: 1px var(--mid-grey) solid;
 }
 
 /* Submenu up from mobile screens */
@@ -331,40 +257,4 @@ a {
     .submenu-active {
         border-radius: 0;
     }
-}
-
-
-/** special bits **/
-#ourMap {
-    width: 100%;
-    height: 500px; 
-}
-  
-/* page titles */
-section#content > h3 {
-    font-size: 2.6rem;
-}
-
-section#content > figure > img {
-    margin: 0 auto;
-}
-
-/* mobile screens */
-@media screen and (max-width: 1024px) {
-    section#content > p, section#content > ul {
-        margin: 0 auto;
-        width: 90%;
-    }
-}
-
-/* bigger screens */
-@media screen and (min-width: 1025px) {
-    section#content > p, section#content > ul {
-        margin: 0 auto;
-        width: 60%;
-    }
-}
-
-div#opening-times {
-    text-align: center;
 }

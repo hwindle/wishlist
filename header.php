@@ -13,7 +13,9 @@
 <body>
   <header>
     <div id="logo"></div>
-    <h1>Wishlist</h1>
+    <div class="header-titles">
+      <h1>Wishlist</h1>
+    </div>
   </header>
   <nav class="navbar-nav">
     <ul>
