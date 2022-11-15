@@ -12,6 +12,7 @@
 </head>
 <body>
   <header>
+    <div id="logo"></div>
     <h1>Wishlist</h1>
   </header>
   <nav class="navbar-nav">
