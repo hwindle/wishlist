@@ -17,24 +17,24 @@
       <h1>Wishlist</h1>
     </div>
   </header>
-  <nav class="navbar-nav">
-    <ul>
-      <li class="nav-item">
+  <nav class="navbar-nav" aria-role="navigation">
+    <ul class="menu">
+      <li class="item">
         <a href="index.php" class="nav-link"><span id="home"></span>
           Home
         </a>
       </li>
-      <li class="nav-item">
+      <li class="item">
         <a href="add_current.php" class="nav-link"><span class="pencil"></span>
           Add Current
         </a>
       </li>
-      <li class="nav-item">
+      <li class="item">
         <a href="view_wishlist.php" class="nav-link">
           View Wishlist
         </a>
       </li>
-      <li class="nav-item">
+      <li class="item">
         <a href="add_wishlist.php" class="nav-link"><span class="pencil"></span>
           Add Wishlist
         </a>
@@ -43,7 +43,7 @@
 <?php
   if ($_SESSION['user_id'] != null) {
     echo <<<'LIST'
-    <li class="nav-item">
+    <li class="item button secondary">
       <a href="logout.php" class="nav-link">
         Logout
       </a>
@@ -51,7 +51,7 @@
     LIST;
   } else {
     echo <<<'LOGIN'
-    <li class="nav-item">
+    <li class="item button secondary">
     <a href="login.php" class="nav-link">
       Login
     </a>

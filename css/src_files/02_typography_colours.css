@@ -78,13 +78,9 @@ header {
 }
 
 figure {
-  color: var(--light-grey);
-  background: var(--main-bg-col);
-  border: 1px solid var(--white);
-}
-
-figure > img {
-  background: var(--white);
+  background: var(--light-grey);
+  border: 3px solid var(--mid-grey);
+  border-radius: 8px;
 }
 
 #logo {
@@ -95,39 +91,15 @@ figure > img {
 
 /*** Plain links within the body copy ***/
 a, a:visited {
-  color: var(--light-company-col);
-  border-bottom: var(--dark-company-col); 
+  font-size: 2rem;
+  color: var(--dark-blue);
+  border-bottom: var(--dark-blue); 
 }
   
 a:hover, a:focus {
-  color: var(--dark-company-col);
-  border-bottom: var(--light-company-col); 
-}
-
-/*** navigation ***/
-nav#main-nav a, nav#main-nav a:visited {
-  color: var(--light-grey);
-}
-
-nav#main-nav a:hover, nav#main-nav a:focus {
-  background: var(--light-company-col);
-  color: var(--white);
-}
-
-nav#main-nav, ul.submenu {
-  background: var(--black);
-}
-
-/*** Google maps ***/
-.map-button {
-  color: var(--main-bg-col);
-  background: var(--light-grey);
-}
-
-.map-button:focus, .map-button:hover {
-  background: var(--light-company-col);;
-  color: var(--white);
-  border: 2px solid var(--dark-company-col); 
+  background-color: var(--dark-blue);
+  color: white;
+  border-bottom: transparent; 
 }
 
 /*** tables ***/

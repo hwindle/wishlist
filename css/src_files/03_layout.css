@@ -76,11 +76,6 @@ a {
     list-style-type: none;
 }
 
-.logo {
-    font-size: 20px;
-    padding: 7.5px 10px 7.5px 0;
-}
-
 .item {
     padding: 10px;
 }
@@ -93,6 +88,7 @@ a {
 .item a:hover::after {
     color: --var(--dark-blue);
 }
+
 /* Mobile menu */
 .menu {
     display: flex;
