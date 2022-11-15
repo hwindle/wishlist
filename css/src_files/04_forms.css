@@ -4,6 +4,65 @@
 * styles for various types of form
 * or PHP web applications
 */
+/* forms */
+.success, .js-success, .php-error, .js-error {
+    color: var(--light-grey);
+  }
+  
+  .success {
+    background: var(--green); 
+  }
+    
+  .php-error {
+    background: var(--red);
+    color: var(--light-grey); 
+  }
+  
+  .js-error {
+    background: var(--main-bg-col);
+    color: var(--white);
+    border: 1px solid var(--red);
+    box-shadow: 0 0 2px var(--red); 
+  }
+  
+  #error_space {
+    color: var(--white);
+  }
+  
+  textarea#message {
+    box-shadow: 0 0 5px var(--black);
+  }
+  
+  input:focus, textarea:focus {
+    box-shadow: -1px 1px 3px var(--light-company-col)
+      , 0 0 5px var(--dark-company-col);
+    background: var(--white); 
+  }
+  
+  input, textarea {
+    background: var(--light-grey);
+    color: var(--black);
+  }
+  
+  input#submit-custom, input#attach {
+    color: var(--main-bg-col);
+    background: var(--light-grey);
+  }
+  
+  input#submit-custom:focus, input#attach:focus,
+  input#submit-custom:hover, input#attach:hover {
+    background: var(--light-company-col);
+    color: var(--white);
+    border: 2px solid var(--dark-company-col); 
+  }
+  
+  button#unhide-attachments {
+    background: var(--main-bg-col);
+    color: var(--white);
+    border: 2px solid var(--light-grey);
+  }
+
+
 .success, .js-success, .php-error, .js-error {
     width: 50%;
     margin: 0 auto; 
