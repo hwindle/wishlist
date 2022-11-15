@@ -21,7 +21,7 @@ body {
 *
 * h1-h6 values and line-heights  go here.
 ******************************************/
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, a, button, li.item {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
@@ -89,7 +89,7 @@ figure {
   background-size: 100% 100%; 
 }
 
-/*** Plain links within the body copy ***/
+/*** LINKS ***/
 a, a:visited {
   font-size: 2rem;
   color: var(--dark-blue);

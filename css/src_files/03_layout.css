@@ -131,37 +131,6 @@ a {
     border-bottom: 1px var(--mid-grey) solid;
 }
 
-/* Submenu up from mobile screens */
-.submenu {
-    display: none;
-}
-
-.submenu-active .submenu {
-   display: block;
-}
-
-.has-submenu i {
-    font-size: 12px;
-}
-
-.has-submenu > a::after {
-    font-size: 20px;
-    line-height: 16px;
-    font-weight: 900;
-    content: "\25BC";
-    color: white;
-    padding-left: 5px;
-}
-
-.subitem a {
-    padding: 10px 15px;
-}
-
-.submenu-active {
-    background-color: #111;
-    border-radius: 3px;
-}
-
 /* Tablet menu */
 @media all and (min-width: 700px) {
     .menu {
@@ -191,27 +160,25 @@ a {
     }
 
     .button a {
-        background: var(--light-company-col);
-        border: 1px var(--light-company-col) solid;
+        background: var(--dark-blue);
+        border: 1px white solid;
+        color: white;
     }
 
     .button.secondary {
         border: 0;
+        color: var(--light-blue);
     }
 
     .button.secondary a {
         background: transparent;
-        border: 1px var(--light-company-col) solid;
-    }
-
-    .button a:hover {
-        text-decoration: none;
+        border: 1px var(--light-blue) solid;
     }
 
     .button:not(.secondary) a:hover {
-        background: var(--dark-company-col);
-        border-color: var(--light-company-col);
-        color: var(--black);
+        background: var(--light-blue);
+        border-color: var(--light-blue);
+        color: var(--dark-blue);
     }
 }
 
