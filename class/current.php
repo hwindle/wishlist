@@ -15,7 +15,7 @@
     public function __construct($db) {
       $this->conn = $db;
       if (!$this->conn) {
-        $e = 'Database connection failed in current constructor.';
+        $e .= '<p class="php-error">Database connection failed in current constructor.</p>';
       }
     }
 
@@ -75,8 +75,8 @@
         $this->description = $dataRow['description'];
         $this->status = $dataRow['status'];
         $this->place = $dataRow['place'];
-      } catch (PDOException $e) {
-        echo 'Fetching one item failed: ' . $e->getMessage();
+      } catch (PDOException $err) {
+        $e .= '<p class="php-error">Fetching one item failed: ' . $err->getMessage() . '</p>';
       }
     }
 

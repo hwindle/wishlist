@@ -15,9 +15,9 @@
     $current->place = $_POST['place'];
     // Access createCurrent method
     if ($current->createCurrent()) {
-      $e = 'Current item added successfully.';
+      $e .= '<p class="success">Current item added successfully.</p>';
     } else {
-      $e .= 'createCurrent method returned false on statement execute.';
+      $e .= '<p class="php-error">createCurrent method returned false on statement execute.</p>';
     }
   }
 ?>
@@ -61,9 +61,9 @@
     <button id="add-current-submit" name="add-current-submit" class="btn btn-primary btn-lg">Add Item</button>
   </div>
 </form>
-<p class="error-area">
+<div class="error-area">
   <?= $e; ?>
-</p>
+</div>
 
 <?php
   require_once('footer.php');

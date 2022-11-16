@@ -21,7 +21,7 @@
     public function __construct($db) {
       $this->conn = $db;
       if (!$this->conn) {
-        $e = 'Database connection failed in wishlist constructor.';
+        $e .= '<p class="php-error">Database connection failed in wishlist constructor.</p>';
       }
     }
 
@@ -94,8 +94,8 @@
         $this->totalPrice = $dataRow['total_price'];
         $this->room = $dataRow['room'];
         $this->priority = $dataRow['priority'];
-      } catch (PDOException $e) {
-        echo 'Fetching one item failed: ' . $e->getMessage();
+      } catch (PDOException $err) {
+        $e .= '<p class="php-error">Fetching one item failed: ' . $err->getMessage() . '</p>';
       }
     }
 

@@ -12,10 +12,9 @@
     $user_obj->password_to_check = $_POST['password'];
 
     if ($user_obj->login()) {
-      $e = 'Welcome! ' . $_SESSION['user_name'] . ' :-)';
+      $e .= '<p class="success">Welcome! ' . $_SESSION['user_name'] . ' :-)</p>';
     } else {
-      $e .= '<br>You are not logged in - login.php line 16' . 
-      $user_obj->password . "<br><br> :-)" . $user_obj->password_to_check;
+      $e .= '<p class="php-error">You are not logged in - login.php line 16</p>';
     }
   }
 

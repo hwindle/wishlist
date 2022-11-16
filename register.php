@@ -20,12 +20,12 @@
     if ($cleaned_conf == $cleaned_pass) {
       $user_obj->password = password_hash($cleaned_pass, PASSWORD_DEFAULT);
     } else {
-      $e = 'Passwords must match. Line 22';
+      $e .= '<p class="php-error">Passwords must match. Line 22</p>';
     }
     if ($user_obj->register()) {
-      $e = 'Welcome new user, you are now registered.';
+      $e .= '<p class="success">Welcome new user, you are now registered.</p>';
     } else {
-      $e = 'Something went wrong and you aren\'t registered.';
+      $e .= '<p class="php-error">Something went wrong and you aren\'t registered.</p>';
     }
   } // isset
 
@@ -53,9 +53,9 @@
     <button id="register-submit" name="register-submit" class="btn btn-primary btn-lg">Register</button>
   </div>
 </form>
-<p class="error-area">
+<div class="error-area">
   <?= $e; ?>
-</p>
+</div>
 
 <?php
   require_once('footer.php');

@@ -48,7 +48,7 @@
       </tr>
     </tfoot>
   </table>
-  <p class="errors"><?= $e; ?></p>
+  <div class="error-area"><?= $e; ?></div>
 <?php
   endif; // session user logged in check
   require_once('footer.php');
