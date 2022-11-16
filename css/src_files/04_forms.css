@@ -4,95 +4,17 @@
 * styles for various types of form
 * or PHP web applications
 */
-/* forms */
-.success, .js-success, .php-error, .js-error {
-    color: var(--light-grey);
-  }
-  
-  .success {
-    background: var(--green); 
-  }
-    
-  .php-error {
-    background: var(--red);
-    color: var(--light-grey); 
-  }
-  
-  .js-error {
-    background: var(--main-bg-col);
-    color: var(--white);
-    border: 1px solid var(--red);
-    box-shadow: 0 0 2px var(--red); 
-  }
-  
-  #error_space {
-    color: var(--white);
-  }
-  
-  textarea#message {
-    box-shadow: 0 0 5px var(--black);
-  }
-  
-  input:focus, textarea:focus {
-    box-shadow: -1px 1px 3px var(--light-company-col)
-      , 0 0 5px var(--dark-company-col);
-    background: var(--white); 
-  }
-  
-  input, textarea {
-    background: var(--light-grey);
-    color: var(--black);
-  }
-  
-  input#submit-custom, input#attach {
-    color: var(--main-bg-col);
-    background: var(--light-grey);
-  }
-  
-  input#submit-custom:focus, input#attach:focus,
-  input#submit-custom:hover, input#attach:hover {
-    background: var(--light-company-col);
-    color: var(--white);
-    border: 2px solid var(--dark-company-col); 
-  }
-  
-  button#unhide-attachments {
-    background: var(--main-bg-col);
-    color: var(--white);
-    border: 2px solid var(--light-grey);
-  }
-
-
-.success, .js-success, .php-error, .js-error {
-    width: 50%;
-    margin: 0 auto; 
-}
-    
-.js-error {
-    width: 70%;
-    border-radius: 3px;
-}
-  
-#error_space {
-    width: 70%;
-    height: 4em;
-    margin: 0 auto;
-    font-size: 1.2em; 
-}
-  
-/* CONTACT FORM */
 form {
-    box-sizing: border-box;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-  
-.full-width {
-    grid-column: span 2;
+  box-sizing: border-box;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
+.form-group {
+  grid-column: span 2;
+}
 
 button,
 fieldset,
@@ -100,130 +22,170 @@ input,
 legend,
 select,
 textarea {
-    border-radius: 3px;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  border-radius: 3px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* mobile screens */
 @media screen and (max-width: 1024px) {
-    form {
-        width: 90%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+  form {
+      width: 90%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+  }
 
-    label {
-        display: block;
-    }
+  label {
+      display: block;
+  }
 
-    button,
-    fieldset,
-    input,
-    legend,
-    select,
-    textarea {
-        grid-column: span 1;
-    }
+  button,
+  fieldset,
+  input,
+  legend,
+  select,
+  textarea {
+      grid-column: span 1;
+  }
 }
 
 /* large screens */
 @media screen and (min-width: 1025px) {
-    form {
-        width: 60%;
-        margin: 0 auto; 
-    }
+  form {
+      width: 60%;
+      margin: 0 auto; 
+  }
 
-    label {
-        display: inline-block;
-    }
+  label {
+      display: inline-block;
+  }
 }
 
 input[type="submit"] {
-    margin: 0.3rem;
-    padding: 0 3rem;
-    font-family: body-sans, "Liberation Sans", Arial, sans-serif;
-    font-size: 2rem; 
+  margin: 0.3rem;
+  padding: 0 3rem;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 2rem; 
 }
 
 input[type="text"],
 input[type="email"],
 input[type="number"],
+input[type="password"],
 select,
 textarea {
-    font-family: body-font, Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.6rem;
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0.5rem 0.75rem;
+  font-size: 1.6rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
 }
 
 textarea {
-    min-height: 12rem;
+  min-height: 12rem;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-  height: 1.6rem;
-  width: 1.6rem;
-  vertical-align: middle;
+height: 1.6rem;
+width: 1.6rem;
+vertical-align: middle;
 }
 
 input[type="radio"] {
-  border-radius: 50%;
+border-radius: 50%;
 }
 
 input[type="radio"]:checked {
-    background-image: radial-gradient(
-      var(--light-company-col) 40%,
-      transparent calc(40% + 1px)
-    );
+  background-image: radial-gradient(
+    var(--orange) 40%,
+    transparent calc(40% + 1px)
+  );
 }
 
 input[type="checkbox"]:checked {
-    background-image: linear-gradient(
-        var(--light-company-col) 40%, 
-        var(--dark-company-col)
-    );
+  background-image: linear-gradient(
+      var(--blush) 40%, 
+      var(--orange)
+  );
 }
 
 .large-label {
-    display: inline-block;
-    margin-bottom: 0.5rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
-
 .small-label {
-    vertical-align: middle;
-    display: inline-block;
-    margin-left: 0.25rem;
-    margin-right: 1.5rem;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 0.25rem;
+  margin-right: 1.5rem;
 }
 
 input::placeholder,
 textarea::placeholder {
-  opacity: 1; /* Firefox */
-  color: var(--light-company-col);
+opacity: 1; /* Firefox */
+color: var(--mid-grey);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--light-company-col);
+outline: none;
+box-shadow: 0 0 0 4px var(--mid-grey);
 }
 
-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px black;
+/* error messages */
+.success {
+  background: white; 
+  color: darkgreen;
+  font-size: 1.6rem;
+  font-weight: bold; 
 }
-
-/* modal */
-div#error_space {
-    display: none; 
+    
+.php-error, .js-error {
+  background: white;
+  color: maroon;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold; 
 }
  
+.error_area {
+  background-color: white;
+  width: 70%;
+  height: 4rem;
+  margin: 0 auto;
+}
+  
+input:focus, textarea:focus {
+  box-shadow: -1px 1px 3px var(--mid-grey)
+    , 0 0 5px var(--dark-blue);
+  background: white; 
+}
+  
+input, textarea {
+  background: white;
+  color: black;
+}
+  
+.btn.btn-primary.btn-lg {
+  padding: 0.3rem 1rem;
+  outline: none;
+  color: white;
+  background: var(--dark-blue);
+  border: 2px solid var(--light-blue); 
+}
+  
+.btn.btn-primary.btn-lg:focus,
+.btn.btn-primary.btn-lg:hover {
+  background-color: var(--light-blue);
+  outline: var(--dark-blue);
+  color: var(--dark-blue);
+  border: 2px solid var(--dark-blue); 
+}
+
+
   
