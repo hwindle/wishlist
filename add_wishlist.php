@@ -17,17 +17,11 @@
     // pic (url)
 
     // quantity int
-
-    // price float
-
-    // room
-
-    // priority int
-    $wishlist->description = $_POST['description'];
-    $wishlist->status = $_POST['status'];
-    $wishlist->place = $_POST['place'];
+    $wishlist->price = $_POST['price'];
+    $wishlist->priority = $_POST['priority'];
+    $wishlist->room = $_POST['room'];
     // Access createCurrent method
-    if ($wishlist->createCurrent()) {
+    if ($wishlist->createWishlist()) {
       $e .= '<p class="success">Current item added successfully.</p>';
     } else {
       $e .= '<p class="php-error">createCurrent method returned false on statement execute.</p>';
@@ -73,16 +67,34 @@
   </div>
   <div class="form-group">
     <div class="col">
-      <label for="place">Place </label>
-      <select id="place" name="place" class="form-control">
+      <label for="pic">pic</label>
+      <input type="image" id="" name="" class="form-control">
+    </div>
+    <div class="col">
+      <label for="quantity"></label>
+      <input type="text" id="" name="" required>
+    </div>
+    <div class="col">
+      <label for="url"></label>
+      <input type="text" id="" name="" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col">
+      <label for="price">Price (£)</label>
+      <input type="number" id="price" name="price" step="0.01" min="0.0" max="200000.00" required>
+    </div>
+    <div class="col">
+      <label for="room">Room</label>
+      <select id="room" name="room" class="form-control">
         <option value="Kitchen">Kitchen</option>
         <option value="Bedroom">Bedroom</option>
-        <option value="Outside">Outside</option>
+        <option value="Garden">Garden</option>
         <option value="Living room">Living room</option>
         <option value="Dining room">Dining room</option>
         <option value="Bathroom">Bathroom</option>
-        <option value="Bedroom-2">Smaller bedroom</option>
-        <option value="Hall">Hall</option>
+        <option value="Garage">Garage</option>
+        <option value="Other">Other</option>
       </select>
     </div>
   </div>
