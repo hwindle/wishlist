@@ -13,7 +13,7 @@ form {
 }
 
 .form-group {
-  grid-column: span 2;
+  width: 100%;
 }
 
 button,
@@ -26,6 +26,17 @@ textarea {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+input, textarea {
+  background: white;
+  color: black;
+}
+
+input:focus, textarea:focus {
+  box-shadow: -1px 1px 3px var(--mid-grey)
+    , 0 0 5px var(--dark-blue);
+  background: white; 
 }
 
 /* mobile screens */
@@ -89,9 +100,9 @@ textarea {
 
 input[type="radio"],
 input[type="checkbox"] {
-height: 1.6rem;
-width: 1.6rem;
-vertical-align: middle;
+  height: 1.6rem;
+  width: 1.6rem;
+  vertical-align: middle;
 }
 
 input[type="radio"] {
@@ -126,15 +137,15 @@ input[type="checkbox"]:checked {
 
 input::placeholder,
 textarea::placeholder {
-opacity: 1; /* Firefox */
-color: var(--mid-grey);
+  opacity: 1; /* Firefox */
+  color: var(--mid-grey);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-outline: none;
-box-shadow: 0 0 0 4px var(--mid-grey);
+  outline: none;
+  box-shadow: 0 0 0 4px var(--mid-grey);
 }
 
 /* error messages */
@@ -158,17 +169,6 @@ box-shadow: 0 0 0 4px var(--mid-grey);
   width: 70%;
   height: 4rem;
   margin: 0 auto;
-}
-  
-input:focus, textarea:focus {
-  box-shadow: -1px 1px 3px var(--mid-grey)
-    , 0 0 5px var(--dark-blue);
-  background: white; 
-}
-  
-input, textarea {
-  background: white;
-  color: black;
 }
   
 .btn.btn-primary.btn-lg {

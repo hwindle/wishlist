@@ -24,7 +24,7 @@
 
 <h3>Add a current item</h3>
 <form method="post" action="add_current.php">
-  <div class="form-row">
+  <div class="form-group">
     <label for="item">Item </label>
     <input type="text" id="item" name="item" class="form-control" required>
   </div>
@@ -32,7 +32,7 @@
     <label for="description">Description</label>
     <input type="text" id="description" name="description" class="form-control" required>
   </div>
-  <div class="row">
+  <div class="form-group">
     <div class="col">
       <label for="status">Status </label>
       <select id="status" name="status" class="form-control">
