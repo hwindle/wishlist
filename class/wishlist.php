@@ -14,7 +14,7 @@
     public $pic;
     public $quantity;
     public $price;
-    public $totalPrice;
+    // public $totalPrice;
     public $room;
     public $priority;
     // DB connection in constructor
@@ -49,7 +49,7 @@
       $this->user_id = $this->user_id;
       $this->item = htmlspecialchars(strip_tags($this->item));
       $this->category = htmlspecialchars(strip_tags($this->category));
-      $this->shop_name = htmlspecialchars(strip_tags($this->shopName));
+      $this->shopName = htmlspecialchars(strip_tags($this->shopName));
       $this->url = htmlspecialchars(strip_tags($this->url));
       $this->pic = htmlspecialchars(strip_tags($this->pic));
       $this->quantity = (int) $this->quantity;
