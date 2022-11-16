@@ -64,7 +64,6 @@ footer {
 /*** navigation ***/
 nav {
     background: var(--light-blue);
-    padding: 0 15px;
 }
 
 a {
@@ -77,11 +76,11 @@ a {
 }
 
 .item {
-    padding: 10px;
+    padding: 0.6rem;
 }
 
 .item.button {
-    padding: 9px 5px;
+    padding: 0.3rem 0.6rem;
 }
 
 .item:not(.button) a:hover,
@@ -89,7 +88,6 @@ a {
     color: --var(--dark-blue);
 }
 
-/* Mobile menu */
 .menu {
     display: flex;
     flex-wrap: wrap;
@@ -99,125 +97,7 @@ a {
 
 .menu li a {
     display: block;
-    padding: 15px 10px;
+    padding: 1rem 0.3rem;
 }
 
-.menu li.subitem a {
-    padding: 15px;
-}
 
-.toggle {
-    order: 1;
-    font-size: 20px;
-}
-
-.item.button {
-    order: 2;
-}
-
-.item {
-    order: 3;
-    width: 100%;
-    text-align: center;
-    display: none;
-}
-
-.active .item {
-    display: block;
-}
-
-/* divider between buttons and menu links */
-.button.secondary {
-    border-bottom: 1px var(--mid-grey) solid;
-}
-
-/* Tablet menu */
-@media all and (min-width: 700px) {
-    .menu {
-        justify-content: center;
-    }
-
-    .logo {
-        flex: 1;
-    }
-
-    .item.button {
-        width: auto;
-        order: 1;
-        display: block;
-    }
-
-    .toggle {
-        flex: 1;
-        text-align: right;
-        order: 2;
-    }
-
-    /* Button up from tablet screen */
-    .menu li.button a {
-        padding: 10px 15px;
-        margin: 5px 0;
-    }
-
-    .button a {
-        background: var(--dark-blue);
-        border: 1px white solid;
-        color: white;
-    }
-
-    .button.secondary {
-        border: 0;
-        color: var(--light-blue);
-    }
-
-    .button.secondary a {
-        background: transparent;
-        border: 1px var(--light-blue) solid;
-    }
-
-    .button:not(.secondary) a:hover {
-        background: var(--light-blue);
-        border-color: var(--light-blue);
-        color: var(--dark-blue);
-    }
-}
-
-/* Desktop menu */
-@media all and (min-width: 960px) {
-    .menu {
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        background: none;
-    }
-
-    .logo {
-        order: 0;
-    }
-
-    .item {
-        order: 1;
-        position: relative;
-        display: block;
-        width: auto;
-    }
-
-    .button {
-        order: 2;
-    }
-
-    .submenu-active .submenu {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 68px;
-        background: #111;
-    }
-
-    .toggle {
-        display: none;
-    }
-
-    .submenu-active {
-        border-radius: 0;
-    }
-}
