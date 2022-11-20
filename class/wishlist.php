@@ -38,15 +38,15 @@
       $sqlQuery = 'INSERT INTO ' . $this->dbTable . 
             ' (user_id, item, category, shop_name, url,
                pic, quantity, price, room, priority)
-                VALUES (user_id = :user_id,
-                item = :item, category = :category,
-                shop_name = :shop_name, url = :url,
-                pic = :pic, quantity = :quantity,
-                price = :price, room = :room, priority = :priority    
+                VALUES (:user_id,
+                :item, :category,
+                :shop_name, :url,
+                :pic, :quantity,
+                :price, :room, :priority    
             )';
       $stmt = $this->conn->prepare($sqlQuery);
       // clean data
-      $this->user_id = $this->user_id;
+      $this->user_id = (int) $this->user_id;
       $this->item = htmlspecialchars(strip_tags($this->item));
       $this->category = htmlspecialchars(strip_tags($this->category));
       $this->shopName = htmlspecialchars(strip_tags($this->shopName));
