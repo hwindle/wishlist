@@ -52,6 +52,7 @@
       $this->shopName = htmlspecialchars(strip_tags($this->shopName));
       $this->url = htmlspecialchars(strip_tags($this->url));
       $this->pic = htmlspecialchars(strip_tags($this->pic));
+      
       $this->quantity = (int) $this->quantity;
       $this->price = floatval($this->price);
       $this->room = htmlspecialchars(strip_tags($this->room));

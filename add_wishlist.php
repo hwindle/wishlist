@@ -17,7 +17,47 @@
       URI. $_FILES['pic'] refers to the input name attribute value,
        the ['name'] part is the filename from the user input.
     */
-    $wishlist->pic = 'uploaded_imgs/' . basename($_FILES['pic']['name']);
+    $pic_unchecked = 'uploaded_imgs/' . basename($_FILES['pic']['name']);
+    // Check if the file was a valid picture under 4MB
+    if (isset($_FILES['pic']) && $_FILES['pic']['error'] == 0) {
+      $allowed_ext = array('jpg' => 'image/jpg',
+                        'jpeg' => 'image/jpeg',
+                        'png' => 'image/png');
+      $file_name = $_FILES['pic']['name'];
+      $file_type = $_FILES['pic']['type'];
+      $file_size = $_FILES['pic']['size'];
+      // is the extension correct?
+      $ext = pathinfo($file_name, PATHINFO_EXTENSION);
+      if (!array_key_exists($ext, $allowed_ext)) {
+        $e .= '<p class="php-error">Error: Please select either a .jpg, .jpeg or .png please.</p>';
+      } // extensions if    
+      $maxSize = 4 * 1024 * 1024;
+      if ($file_size > $maxSize) {
+        $e .= '<p class="php-error">Error: File size is larger than the allowed limit.</p>';
+      }                    
+      // Verify meta info in the file to make sure it's a pic
+      if (in_array($file_type, $allowed_ext)) {
+        // Check whether file exists before uploading it
+        if (file_exists('uploaded_imgs/' . $_FILES['pic']['name'])) {
+          $e .= '<p class="php-error">' . $file_name . 
+            ' already exists. You have uploaded that one.</p>';
+        } else {
+          if (move_uploaded_file($_FILES['pic']['tmp_name'], $pic_unchecked)) {
+            $e .= '<p class="success">The file ' . $file_name . 
+                  ' has been received. </p>';
+          } else {
+            $e .= '<p class="php-error">Sorry, there was an error uploading your file.</p>';
+          }
+        } // if - checking if file is a duplicate
+      } else {
+        $e .= '<p class="php-error">Please try again. Line 53, add_wishlist.php</p>';
+      }
+      $wishlist->pic = $pic_unchecked;
+    } else {
+      $e .= '<p class="php-error">File upload error: ' 
+        . $_FILES['pic']['error'] . '</p>';
+    } // end if - mimetype checking
+
     $wishlist->quantity = $_POST['quantity'];
     $wishlist->price = $_POST['price'];
     $wishlist->priority = $_POST['priority'];
