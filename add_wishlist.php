@@ -12,14 +12,13 @@
     $wishlist->user_id = $_SESSION['user_id'];
     $wishlist->category = $_POST['category'];
     $wishlist->shopName = $_POST['store-name'];
-    
-
+    $wishlist->url = $_POST['url'];
     /* Basename strips any .. chars, creates a correctly formatted
       URI. $_FILES['pic'] refers to the input name attribute value,
        the ['name'] part is the filename from the user input.
     */
     $wishlist->pic = 'uploaded_imgs/' . basename($_FILES['pic']['name']);
-    // quantity int
+    $wishlist->quantity = $_POST['quantity'];
     $wishlist->price = $_POST['price'];
     $wishlist->priority = $_POST['priority'];
     $wishlist->room = $_POST['room'];
@@ -71,14 +70,14 @@
   <div class="form-group">
     <div class="col">
       <label for="pic">pic</label>
-      <input type="image" id="pic" name="pic" class="form-control" required>
+      <input type="file" id="pic" name="pic" class="form-control" required>
     </div>
     <div class="col">
-      <label for="quantity"></label>
-      <input type="number" min="1" max="10000" id="quantity" name="quantity" required>
+      <label for="quantity">Quantity</label>
+      <input type="number" min="1" max="1000" id="quantity" name="quantity" required>
     </div>
     <div class="col">
-      <label for="url"></label>
+      <label for="url">Web address</label>
       <input type="url" id="url" name="url" required>
     </div>
   </div>
