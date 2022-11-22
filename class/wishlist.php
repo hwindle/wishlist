@@ -27,7 +27,7 @@
 
     // fetch all rows
     public function getWishlist() {
-      $sqlQuery = 'SELECT * FROM ' . $this->dbTable . ' ORDER BY room';
+      $sqlQuery = 'SELECT * FROM ' . $this->dbTable . ' ORDER BY room, user_id';
       $stmt = $this->conn->prepare($sqlQuery);
       $stmt->execute();
       return $stmt; 
