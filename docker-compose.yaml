@@ -1,0 +1,10 @@
+version: "3"
+services:
+  database:
+    image: postgres:latest
+    env_file:
+      - db-dev.env
+    container_name: pg-wishlist
+    volumes:
+      - ./data-postgres:/var/lib/postgresql/data
+    
