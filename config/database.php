@@ -1,9 +1,9 @@
 <?php
   class Database {
-    private $host = '127.0.0.1';
+    private $host = 'pg-wishlist';
     private $databaseName = 'wishlist';
-    private $username = 'wishlist';
-    private $password = '<PASSWORD>';
+    private $username = 'postgres';
+    private $password = 'U24u418^9op23*EWe';
     public $conn;
 
     public function getConnection() {

@@ -5,6 +5,27 @@ services:
     env_file:
       - db-dev.env
     container_name: pg-wishlist
+    restart: always
+    ports:
+      - 5432:5432
     volumes:
       - ./data-postgres:/var/lib/postgresql/data
+  webserver:
+    build: ./nginx-docker/
+    container_name: nginx-container
+    ports:
+      - 8023:80
+      - 4430:443
+    restart: always
+    links: 
+      - database
+      - php
+    volumes:
+      - .:/var/www/html
+  
+  php:
+    build: ./php-docker/
+    container_name: php-container
+    volumes:
+      - .:/var/www/html
     
