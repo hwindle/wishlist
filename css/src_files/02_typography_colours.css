@@ -63,8 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 }
   
 
-/*** setting the colours for elements - DARK MODE ***/
-
 body, main {
   background: var(--light-grey);
   color: black; 

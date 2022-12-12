@@ -4,100 +4,166 @@
  * Setting up the padding, basic colours, and
  * any positioning.
  ********************************************/
-html, body {
-    width: 100%;
-    height: 100%; 
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 /*** HEADER ***/
 header {
-    display: flex;
-    flex-direction: row nowrap;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
 }
-  
+
 div#logo {
-    width: 200px;
-    height: 200px;
-    flex-shrink: 3;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 3;
 }
 
 div.header-titles {
-    flex-grow: 4;
-}
-
-/* mobile screens */
-@media screen and (max-width: 1024px) {
-    header h1 {
-        font-size: 2.6rem;
-    }
-
-    header h2 {
-        font-size: 2rem;
-    }
-}
-
-/* bigger screens */
-@media screen and (min-width: 1025px) {
-    header h1 {
-        font-size: 4rem;
-    }
-
-    header h2 {
-        font-size: 3rem;
-    }
+  flex-grow: 4;
 }
 
 /*** BODY CONTENT ***/
-pre, code, p, main {
-    padding: 1rem; 
+pre,
+code,
+p,
+main {
+  padding: 1rem;
 }
 
 /*** FOOTER ***/
 footer {
-    margin-top: 0.6rem;
-    width: 100%;
-    font-size: 0.9rem;
-    text-align: center;
+  margin-top: 0.6rem;
+  width: 100%;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 /*** navigation ***/
 nav {
-    background: var(--light-blue);
+  background: var(--light-blue);
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .menu,
 .submenu {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .item {
-    padding: 0.6rem;
+  padding: 0.6rem;
 }
 
 .item.button {
-    padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.6rem;
 }
 
 .item:not(.button) a:hover,
 .item a:hover::after {
-    color: --var(--dark-blue);
+  color: --var(--dark-blue);
 }
 
 .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu li a {
-    display: block;
-    padding: 1rem 0.3rem;
+  display: block;
+  padding: 1rem 0.3rem;
 }
 
+/* cards */
+section.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
 
+div.wishlist-card {
+  flex-basis: 30vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  background-color: var(--blush);
+}
+
+.wishlist-card h5 {
+  flex-grow: 1;
+}
+
+a.buy-button {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background-color: var(--orange);
+}
+
+a.buy-button:hover,
+a.buy-button:focus {
+  border: 2px solid var(--orange);
+  border-radius: 15px;
+  background-color: var(--yellow);
+  box-shadow: 0 1px 5px var(--mid-grey);
+}
+
+.wishlist-card p {
+  text-align: center;
+}
+
+/* MEDIA QUERIES */
+/* mobile screens */
+@media screen and (max-width: 700px) {
+  div#logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.card-container {
+    display: block;
+  }
+
+  .wishlist-card {
+    margin: 0 auto;
+  }
+}
+
+/* tablet screens */
+@media screen and (max-width: 1024px) {
+  header h1 {
+    font-size: 2.6rem;
+  }
+
+  header h2 {
+    font-size: 2rem;
+  }
+}
+
+/* bigger screens */
+@media screen and (min-width: 1025px) {
+  header h1 {
+    font-size: 4rem;
+  }
+
+  header h2 {
+    font-size: 3rem;
+  }
+}
