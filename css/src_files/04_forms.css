@@ -1,11 +1,8 @@
 /***********
 * FORMS
 *
-* styles for various types of form
-* or PHP web applications
 */
 form {
-  box-sizing: border-box;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -14,18 +11,6 @@ form {
 
 .form-group {
   width: 100%;
-}
-
-button,
-fieldset,
-input,
-legend,
-select,
-textarea {
-  border-radius: 3px;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
 }
 
 input, textarea {
@@ -85,6 +70,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
+input[type="file"],
 select,
 textarea {
   font-size: 1.6rem;
@@ -106,7 +92,7 @@ input[type="checkbox"] {
 }
 
 input[type="radio"] {
-border-radius: 50%;
+  border-radius: 50%;
 }
 
 input[type="radio"]:checked {
@@ -121,31 +107,6 @@ input[type="checkbox"]:checked {
       var(--blush) 40%, 
       var(--orange)
   );
-}
-
-.large-label {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.small-label {
-  vertical-align: middle;
-  display: inline-block;
-  margin-left: 0.25rem;
-  margin-right: 1.5rem;
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1; /* Firefox */
-  color: var(--mid-grey);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--mid-grey);
 }
 
 /* error messages */
@@ -166,14 +127,15 @@ textarea:focus {
  
 .error_area {
   background-color: white;
-  width: 70%;
+  width: 50%;
   height: 4rem;
   margin: 0 auto;
 }
   
 .btn.btn-primary.btn-lg {
-  padding: 0.3rem 1rem;
-  outline: none;
+  padding: 1rem 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   color: white;
   background: var(--dark-blue);
   border: 2px solid var(--light-blue); 

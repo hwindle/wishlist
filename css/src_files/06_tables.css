@@ -18,12 +18,13 @@ caption {
   
 th, td {
   padding: 0.3em 0.8em; 
+  font-size: 1.2rem;
 }
   
 thead > tr > th {
   font-weight: bold;
   letter-spacing: 1px;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 tfoot > tr > td {
