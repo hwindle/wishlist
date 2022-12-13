@@ -71,13 +71,14 @@ input[type="email"],
 input[type="number"],
 input[type="password"],
 input[type="file"],
+input[type="url"],
 select,
 textarea {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: 0.3rem 0.5rem;
 }
 
 textarea {
@@ -127,7 +128,7 @@ input[type="checkbox"]:checked {
  
 .error_area {
   background-color: white;
-  width: 50%;
+  width: 500px;
   height: 4rem;
   margin: 0 auto;
 }

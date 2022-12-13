@@ -14,11 +14,12 @@
     public $pic;
     public $quantity;
     public $price;
-    // public $totalPrice;
+    public $totalPrice;
     public $room;
     public $priority;
     // DB connection in constructor
     public function __construct($db) {
+    $e = '';
       $this->conn = $db;
       if (!$this->conn) {
         $e .= '<p class="php-error">Database connection failed in wishlist constructor.</p>';
@@ -81,6 +82,7 @@
               . ' WHERE id = ? LIMIT 1';
       $stmt = $this->conn->prepare($sqlQuery);
       $stmt->bindParam(1, $this->wishlist_id);
+      $e = '';
       try {
         $stmt->execute();
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -115,7 +117,7 @@
       $this->user_id = $_SESSION['user_id'];
       $this->item = htmlspecialchars(strip_tags($this->item));
       $this->category = htmlspecialchars(strip_tags($this->category));
-      $this->shop_name = htmlspecialchars(strip_tags($this->shopName));
+      $this->shopName = htmlspecialchars(strip_tags($this->shopName));
       $this->url = htmlspecialchars(strip_tags($this->url));
       $this->pic = htmlspecialchars(strip_tags($this->pic));
       $this->quantity = (int) $this->quantity;

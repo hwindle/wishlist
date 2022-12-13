@@ -13,6 +13,7 @@ class User {
 
   public function __construct($db) {
     $this->conn = $db;
+    $e = '';
     if (!$this->conn) {
       $e .= '<p class="php-error">Database connection failed in users constructor.</p>';
     }
@@ -25,6 +26,7 @@ class User {
     $stmt = $this->conn->prepare($sql);
     $stmt->bindParam(':id', $this->user_id);
     $stmt->bindParam(':email', $this->email);
+    $e = '';
     if ($stmt->execute()) {
       if ($stmt->fetch(PDO::FETCH_ASSOC)) {
         $e .= '<p class="php-error">The user id or email already exists in the table.</p>';

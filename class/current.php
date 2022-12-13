@@ -13,6 +13,7 @@
     public $place;
     // DB connection in constructor
     public function __construct($db) {
+    $e = '';
       $this->conn = $db;
       if (!$this->conn) {
         $e .= '<p class="php-error">Database connection failed in current constructor.</p>';
@@ -63,6 +64,7 @@
     // read one item
     public function getOneItem($id) {
       $this->id = (int) $id;
+    $e = '';
       $sqlQuery = 'SELECT * FROM ' . $this->dbTable 
               . ' WHERE current_id = ? LIMIT 1';
       $stmt = $this->conn->prepare($sqlQuery);

@@ -89,7 +89,7 @@ figure {
 
 /*** LINKS ***/
 a, a:visited {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--dark-blue);
   border-bottom: var(--dark-blue); 
 }
