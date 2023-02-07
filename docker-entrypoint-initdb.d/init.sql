@@ -1,4 +1,0 @@
-CREATE USER wishlist;
-
-CREATE DATABASE wishlist;
-GRANT ALL PRIVILEGES ON DATABASE wishlist TO wishlist;

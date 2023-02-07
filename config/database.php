@@ -3,7 +3,7 @@
     private $host = 'pg-wishlist';
     private $databaseName = 'wishlist';
     private $username = 'postgres';
-    private $password = 'U24u418^9op23*EWe';
+    private $password = '<putnode-pw-here-process-env';
     public $conn;
 
     public function getConnection() {
