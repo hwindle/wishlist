@@ -1,5 +1,7 @@
 <?php
-  session_start();
+  if ($_SESSION['user_id'] != null) {
+    session_start();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -32,6 +32,8 @@
           echo "\n<td>${result['description']}</td>\n";
           echo "\n<td>${result['status']}</td>\n";
           echo "\n<td>${result['place']}</td>\n";
+          echo "\n<td><a href='update_current?id=${result['id']}' class='update-btn'>Update</a></td>\n";
+          echo "\n<td><a href='delete_current?id=${result['id']}' class='delete-btn'>Delete</a></td>\n";
           echo '</tr>';
         }
         if ($results == null) {
