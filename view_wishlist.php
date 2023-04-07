@@ -29,8 +29,8 @@
           echo "\n<p class='prices'>£${result['price']} each, £${result['total_price']}  total for ${result['quantity']}.</p>\n";
           echo "\n<p class='priority'>Priority (100 highest): ${result['priority']}</p>\n";
           echo "\n<p class='category'>Category: ${result['category']}</p>\n";
-          echo "\n<button><a href='update_wishlist?id=${result['id']}' class='update-btn'>Update</a></button>\n";
-          echo "\n<button><a href='delete_wishlist?id=${result['id']}' class='delete-btn'>Delete</a></button>\n";
+          echo "\n<button><a href='update_wishlist.php?id=" . ${result['id']} . " class='update-btn'>Update</a></button>\n";
+          echo "\n<button><a href='delete_wishlist.php?id=" . ${result['id']} . " class='delete-btn'>Delete</a></button>\n";
           echo '</div>';
         }
         if ($results == null) {
